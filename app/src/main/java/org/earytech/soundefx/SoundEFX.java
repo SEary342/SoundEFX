@@ -1,4 +1,4 @@
-package sound;
+package org.earytech.soundefx;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -17,7 +17,7 @@ import javax.swing.filechooser.FileFilter;
  * G13 keypad.
  * 
  * @author Sam Eary
- * @version 1.2.1
+ * @version 2.0
  */
 public class SoundEFX implements ActionListener, KeyListener {
 	private static final String FILEBASE = "SoundFiles/";
@@ -63,10 +63,9 @@ public class SoundEFX implements ActionListener, KeyListener {
 		format(stop);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setupMenus();
-		mainFrame
-				.setIconImage(new ImageIcon("MISC/spk.png").getImage());
-		mainFrame.setResizable(false);
-		mainFrame.setUndecorated(true);
+		mainFrame.setIconImage(new ImageIcon(getClass().getResource("/spk.png")).getImage());
+		mainFrame.setResizable(true);
+		mainFrame.setUndecorated(false);
 		MoveMouseListener mml = new MoveMouseListener(
 				(JComponent) title);
 		title.addMouseListener(mml);
@@ -222,7 +221,6 @@ public class SoundEFX implements ActionListener, KeyListener {
 				.addComponent(buttons.get(13)).addComponent(stop));
 		layout.setVerticalGroup(vGroup);
 		layout.setHorizontalGroup(hGroup);
-
 	}
 
 	private void openAudio(int idc) {

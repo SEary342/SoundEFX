@@ -1,4 +1,4 @@
-package sound;
+package org.earytech.soundefx;
 
 import javax.swing.JButton;
 

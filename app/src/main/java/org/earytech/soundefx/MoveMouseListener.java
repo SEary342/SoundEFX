@@ -1,4 +1,4 @@
-package sound;
+package org.earytech.soundefx;
 
 import java.awt.*;
 import java.awt.event.*;

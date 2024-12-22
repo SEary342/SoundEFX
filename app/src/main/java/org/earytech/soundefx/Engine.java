@@ -1,4 +1,4 @@
-package sound;
+package org.earytech.soundefx;
 
 import java.io.*;
 import java.text.ParseException;
@@ -30,7 +30,7 @@ public class Engine {
 
 	protected boolean isLooped(int idc) {
 		if (sounds[idc] != null)
-			return sounds[idc].getLooping();
+			return sounds[idc].isLooping();
 		return false;
 	}
 
@@ -47,7 +47,7 @@ public class Engine {
 			throws UnsupportedAudioFileException, IOException,
 			LineUnavailableException {
 		playAudioClip(sounds[keyNum].getFileName(),
-				sounds[keyNum].getLooping(), keyNum);
+				sounds[keyNum].isLooping(), keyNum);
 	}
 
 	protected void setSound(int idc, String fileName, boolean looping) {
